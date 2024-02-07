@@ -1,0 +1,79 @@
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+ iframe {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+
+  }
+
+
+.mapClass{
+    height: 8%;
+    width: 2%;
+    left: 44%;
+    top: 50%;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    font-size: 28px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgb(215, 43, 43); 
+    color: black; 
+    border: 3px solid rgb(0, 0, 0);
+    white-space: pre-line;
+    line-height: 0.8;
+    font-family: "Copperplate", Fantasy;
+}
+
+.mapClass:hover {
+    background-color: rgb(123, 14, 14);
+    color: white;
+  }
+  
+#mapButton {
+    display: none;
+}
+
+.mapButton:active {
+    margin-left: 1px 1px 0;
+    box-shadow: -1px -1px 1px #000;
+    outline: 1px solid black;
+    background-image: linear-gradient(to top, #f4f5f5, #dfdddd);
+}
+
+#mapButton:checked + label {
+    animation-name: slide-left;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slide-left {
+    to {margin-left: -45%;};
+}
+
+.animate {
+    animation-name: slide-map-left;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slide-map-left {
+    to {margin-left: -45%;}
+  }
+  .return {
+    animation-name: slide-map-return;
+    to {margin-left: 0%;}
+  }
+
