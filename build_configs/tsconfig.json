@@ -1,0 +1,10 @@
+{
+    "$schema": "http://json.schemastore.org/tsconfig",
+    "include": [ "../src/**/*.ts" ],
+    "compilerOptions": {
+        "module": "ES2022",
+        "target": "ES2022",
+        "moduleResolution": "node",
+        "outDir": "../tmp/ts/"
+    }
+}
