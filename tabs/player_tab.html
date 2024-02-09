@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>File Reading</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
-    </head>
+   <head>
+       <!-- <title>File Reading</title> -->
+       <title> Geopolitics </title>
+       <link rel="stylesheet" href="style.css">
+       <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
+   </head>
 
-    <script>
-        var x = true;
-        function DoAnimation() {
-            var mapElement = document.getElementById("map");
-            if(x){
-                mapElement.className = "animate";
-                x = false;
-                }else{
-                mapElement.className = "return";
-                x = true;
-            }  
-        }    
-      </script>
-    <body>
-        <input type="file" id="playerData" accept=".json,application/json" />
-        <div id="jsonOut"></div>
 
-        <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="45%"></iframe>
-        <input type="checkbox" id="mapButton" onCLick="DoAnimation();"/>
-        <label class="mapClass" for="mapButton"><
-            <
-            <
-        </label>
-        
-    </body>
-    <script src="../scripts/player_tab.js">
-    </script>
+   <script>
+       var x = true;
+       var z = true;
+       function DoAnimation() {
+           var mapElement = document.getElementById("map");
+           if(x){
+               mapElement.className = "animate";
+               x = false;
+               }else{
+               mapElement.className = "return";
+               x = true;
+           } 
+       }   
+      
+     </script>
+   <body>
+       <!-- <input type="file" id="playerData" accept=".json,application/json" /> -->
+       <!-- <div id="jsonOut"></div> -->
+
+
+       <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="45%"></iframe>
+       <input type="checkbox" id="mapButton" onCLick="DoAnimation();"/>
+       <label class="mapClass" for="mapButton"><
+       </label>
+
+
+
+
+       <div class="vl"></div>
+   <p class="industry"> 6 </p>
+
+
+   <div class='resources'> 5000
+     </div>
+
+
+   <div class="military"> 100 </div>
+      
+   </body>
+   <script src="../scripts/player_tab.js">
+   </script>
 </html>
