@@ -1,52 +1,115 @@
 <!DOCTYPE html>
 <html>
-   <head>
-       <!-- <title>File Reading</title> -->
-       <title> Geopolitics </title>
-       <link rel="stylesheet" href="style.css">
-       <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
-   </head>
+  <head>
+      <title> Geopolitics </title>
+      <link rel="stylesheet" href="style.css">
+      <script src="https://kit.fontawesome.com/fbbd0c2358.js" crossorigin="anonymous"></script>
+      <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
+  </head>
+  <script>
+     var mbClicks = 0;
+     var ibClicks = 0;
+     var dbClicks = 0;
+     var wbClicks = 0;
+
+      function mbAnimate(){
+        var mapElement = document.getElementById("map");
+        if ((ibClicks % 2) != 0){
+          industryButton.click();
+        }   
+        if ((dbClicks % 2) != 0){
+          diplomacyButton.click();
+        }
+        if ((wbClicks % 2) != 0){
+          warButton.click();
+        } 
+
+        if(mbClicks % 2 == 0){
+          mapElement.className = "animate";
+          x = false;
+          }else{
+          mapElement.className = "return";
+          x = true;
+          }
+
+        mbClicks ++;
+      }
+
+      function ibAnimate(){
+        if ((mbClicks % 2) == 0){
+          mapButton.click();
+        }   
+        if ((dbClicks % 2) != 0){
+          diplomacyButton.click();
+        }
+        if ((wbClicks % 2) != 0){
+          warButton.click();
+        } 
+
+        ibClicks ++;
+      }
+
+      function dbAnimate(){
+        if ((mbClicks % 2) == 0){
+          mapButton.click();
+        }   
+        if ((ibClicks % 2) != 0){
+          industryButton.click();
+        } 
+        if ((wbClicks % 2) != 0){
+          warButton.click();
+        } 
+
+        dbClicks ++;
+      }
+
+      function wbAnimate(){
+        if ((mbClicks % 2) == 0){
+          mapButton.click();
+        }  
+        if ((ibClicks % 2) != 0){
+          industryButton.click();
+        }  
+        if ((dbClicks % 2) != 0){
+          diplomacyButton.click();
+        }
+
+        wbClicks ++;
+      }
+   
+    </script>
+  <body>
+      <!-- <input type="file" id="playerData" accept=".json,application/json" /> -->
+      <!-- <div id="jsonOut"></div> -->
+
+      <!-- Left Side Tabs & Buttons -->
+      <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="45%"></iframe>
+      <input type="checkbox" id="mapButton" onCLick="mbAnimate()" />
+      <label class="iconClass" for="mapButton" id = "mapIcon"> <i class="fa-solid fa-map-location-dot" ></i>
+      </label>
+
+      <!-- <div id = "industryTab"></div> -->
+      <input type="checkbox" id="industryButton" onCLick="ibAnimate()"/>
+      <label class="iconClass" for="industryButton" id = "industryIcon"> <i class="fa-solid fa-coins"></i>
+      </label>
+
+      <input type="checkbox" id="diplomacyButton" onCLick="dbAnimate()"/>
+      <label class="iconClass" for="diplomacyButton" id = "diplomacyIcon"> <i class="fa-solid fa-user-group"></i>
+      </label>
+
+      <input type="checkbox" id="warButton" onCLick="wbAnimate()"/>
+      <label class="iconClass" for="warButton" id = "warIcon"> <i class="fa-solid fa-cart-shopping"></i>
+      </label>
 
 
-   <script>
-       var x = true;
-       var z = true;
-       function DoAnimation() {
-           var mapElement = document.getElementById("map");
-           if(x){
-               mapElement.className = "animate";
-               x = false;
-               }else{
-               mapElement.className = "return";
-               x = true;
-           } 
-       }   
-      
-     </script>
-   <body>
-       <!-- <input type="file" id="playerData" accept=".json,application/json" /> -->
-       <!-- <div id="jsonOut"></div> -->
+      <!-- Display Info -->
+      <div class="vl"></div>
+  <p class="industry"> 6 </p>
 
+  <div class='resources'> 5000
+    </div>
 
-       <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="45%"></iframe>
-       <input type="checkbox" id="mapButton" onCLick="DoAnimation();"/>
-       <label class="mapClass" for="mapButton"><
-       </label>
-
-
-
-
-       <div class="vl"></div>
-   <p class="industry"> 6 </p>
-
-
-   <div class='resources'> 5000
-     </div>
-
-
-   <div class="military"> 100 </div>
-      
-   </body>
-   <script src="../scripts/player_tab.js">
-   </script>
+  <div class="military"> 100 </div>
+   
+  </body>
 </html>
