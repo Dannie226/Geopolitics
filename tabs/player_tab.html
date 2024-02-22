@@ -1,115 +1,110 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title> Geopolitics </title>
-      <link rel="stylesheet" href="style.css">
-      <script src="https://kit.fontawesome.com/fbbd0c2358.js" crossorigin="anonymous"></script>
-      <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
-  </head>
-  <script>
-     var mbClicks = 0;
-     var ibClicks = 0;
-     var dbClicks = 0;
-     var wbClicks = 0;
+    <head>
+        <title> Geopolitics </title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/fbbd0c2358.js" crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
+    </head>
+    <body>
+        <!-- <input type="file" id="playerData" accept=".json,application/json" /> -->
+        <!-- <div id="jsonOut"></div> -->
+        <div class="tab">
+            <div class="panel animate">
+                <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="100%"></iframe>
+            </div>
+            <div class="button animate" style="top: 0%;">
+                <input type="checkbox" id="mapButton" checked name="panelSelect"/>
+                <label class="iconClass" for="mapButton" id="mapIcon"> <i class="fa-solid fa-map-location-dot"></i>
+                </label>
+            </div>
+        </div>
 
-      function mbAnimate(){
-        var mapElement = document.getElementById("map");
-        if ((ibClicks % 2) != 0){
-          industryButton.click();
-        }   
-        if ((dbClicks % 2) != 0){
-          diplomacyButton.click();
+        <!-- Left Side Tabs & Buttons -->
+
+        <!-- <div id = "industryTab"></div> -->
+        <div class="tab">
+            <div class="panel return" style="background-color: blue;">
+                
+            </div>
+            <div class="button return" style="top: 10%;">
+                <input class="hidden" type="checkbox" id="industryButton" name="panelSelect"/>
+                <label class="iconClass" for="industryButton" id="industryIcon"> <i class="fa-solid fa-coins"></i>
+                </label>
+            </div>
+        </div>
+        
+        <div class="tab">
+            <div class="panel return" style="background-color: red;">
+
+            </div>
+            <div class="button return" style="top: 15%;">
+                <input type="checkbox" id="diplomacyButton" name="panelSelect"/>
+                <label class="iconClass" for="diplomacyButton" id="diplomacyIcon"> <i class="fa-solid fa-user-group"></i>
+                </label>
+            </div>
+        </div>
+
+        <div class="tab">
+            <div class="panel return" style="background-color: green;">
+
+            </div>
+            <div class="button return" style="top: 20%">
+                <input type="checkbox" id="warButton" name="panelSelect"/>
+                <label class="iconClass" for="warButton" id="warIcon"> <i class="fa-solid fa-cart-shopping"></i>
+                </label>
+            </div>
+        </div>
+
+        <!-- Display Info -->
+        <div class="vl"></div>
+        <p class="industry"> 6 </p>
+
+        <div class='resources'> 5000
+        </div>
+
+        <div class="military"> 100 </div>
+
+    </body>
+    <script>
+        function main() {
+            const tabs = Array.from(document.getElementsByClassName("tab"));
+            let prevPanel = tabs[0].children[0];
+            let prevButton = tabs[0].children[1];
+            tabs.forEach(elem => {
+                const panel = elem.children[0];
+                const button = elem.children[1];
+
+                button.children[0].addEventListener("change", () => {
+                    if(prevPanel == panel) {
+                        prevPanel.classList.remove("animate");
+                        prevPanel.classList.add("return");
+
+                        prevButton.classList.remove("animate");
+                        prevButton.classList.add("return");
+
+                        prevPanel = null;
+                        return;
+                    } else if(prevPanel != null) {
+                        prevPanel.classList.remove("animate");
+                        prevPanel.classList.add("return");
+
+                        prevButton.classList.remove("animate");
+                        prevButton.classList.add("return");
+                    }
+
+                    panel.classList.remove("return");
+                    panel.classList.add("animate");
+
+                    button.classList.remove("return");
+                    button.classList.add("animate");
+
+                    prevPanel = panel;
+                    prevButton = button;
+                });
+            });
         }
-        if ((wbClicks % 2) != 0){
-          warButton.click();
-        } 
 
-        if(mbClicks % 2 == 0){
-          mapElement.className = "animate";
-          x = false;
-          }else{
-          mapElement.className = "return";
-          x = true;
-          }
-
-        mbClicks ++;
-      }
-
-      function ibAnimate(){
-        if ((mbClicks % 2) == 0){
-          mapButton.click();
-        }   
-        if ((dbClicks % 2) != 0){
-          diplomacyButton.click();
-        }
-        if ((wbClicks % 2) != 0){
-          warButton.click();
-        } 
-
-        ibClicks ++;
-      }
-
-      function dbAnimate(){
-        if ((mbClicks % 2) == 0){
-          mapButton.click();
-        }   
-        if ((ibClicks % 2) != 0){
-          industryButton.click();
-        } 
-        if ((wbClicks % 2) != 0){
-          warButton.click();
-        } 
-
-        dbClicks ++;
-      }
-
-      function wbAnimate(){
-        if ((mbClicks % 2) == 0){
-          mapButton.click();
-        }  
-        if ((ibClicks % 2) != 0){
-          industryButton.click();
-        }  
-        if ((dbClicks % 2) != 0){
-          diplomacyButton.click();
-        }
-
-        wbClicks ++;
-      }
-   
+        main();
     </script>
-  <body>
-      <!-- <input type="file" id="playerData" accept=".json,application/json" /> -->
-      <!-- <div id="jsonOut"></div> -->
-
-      <!-- Left Side Tabs & Buttons -->
-      <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="45%"></iframe>
-      <input type="checkbox" id="mapButton" onCLick="mbAnimate()" />
-      <label class="iconClass" for="mapButton" id = "mapIcon"> <i class="fa-solid fa-map-location-dot" ></i>
-      </label>
-
-      <!-- <div id = "industryTab"></div> -->
-      <input type="checkbox" id="industryButton" onCLick="ibAnimate()"/>
-      <label class="iconClass" for="industryButton" id = "industryIcon"> <i class="fa-solid fa-coins"></i>
-      </label>
-
-      <input type="checkbox" id="diplomacyButton" onCLick="dbAnimate()"/>
-      <label class="iconClass" for="diplomacyButton" id = "diplomacyIcon"> <i class="fa-solid fa-user-group"></i>
-      </label>
-
-      <input type="checkbox" id="warButton" onCLick="wbAnimate()"/>
-      <label class="iconClass" for="warButton" id = "warIcon"> <i class="fa-solid fa-cart-shopping"></i>
-      </label>
-
-
-      <!-- Display Info -->
-      <div class="vl"></div>
-  <p class="industry"> 6 </p>
-
-  <div class='resources'> 5000
-    </div>
-
-  <div class="military"> 100 </div>
-   
-  </body>
 </html>

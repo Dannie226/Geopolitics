@@ -1,188 +1,211 @@
+:root {
+    --transition-time: 1s;
+}
+
 html, body {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: antiquewhite;
- }
- iframe {
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  display: inline-block;
-  position: absolute;
-  z-index: 0;
- }
- .vl {
-  border-left: 6px solid black;
-  height: 100%;
-  position: absolute;
-  margin-left: 45%;
-  top: 0;
- }
- 
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: antiquewhite;
+}
+
+iframe {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+}
+
+.vl {
+    border-left: 6px solid black;
+    height: 100%;
+    position: absolute;
+    margin-left: 45%;
+    top: 0;
+}
+
+.panel {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+
+    width: 45%;
+    height: 100%;
+
+    transition: left var(--transition-time) ease;
+}
+
 /* -----------------------------------All Buttons & Animation----------------------------------- */
 
- /* Buttons in General */
- .iconClass{
-  height: 30px;
-  width: 30px;
-  left: 45%;
-  z-index: 1;
-  position: absolute;
-  text-align: center;
-  font-size: 20px;
-  cursor: pointer;
-  border: 5px solid rgb(0, 0, 0);
-  line-height: 1.5;
-  transition: width .3s, margin-left 2s, background-color 0.5s ease;
-  color: white;
- }
- .iconClass:hover {
-  width: 60px;
- }
+/* Buttons in General */
 
- /* Map Button */
- #mapButton {
-  display: none;
- }
- #mapButton:checked + label {
-  margin-left: -45%;
- }
- #mapIcon{
-  background-color: rgb(215, 43, 43);
-  top: 0%;
- }
- #mapIcon:hover{
-  background-color: rgb(127, 17, 17);
- }
+.iconClass {
+    height: 30px;
+    width: 30px;
+    left: 45%;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: 5px solid rgb(0, 0, 0);
+    line-height: 1.5;
+    transition: width calc(var(--transition-time) * 3 / 20), background-color calc(var(--transition-time) / 4) ease;
+    color: white;
+}
 
- /* Industry Button */
- #industryButton {
-  display: none;
- }
- #industryButton:checked + label {
-  margin-left: 0%;
- }
- #industryIcon{
-  background-color: rgb(66, 84, 217);
-  top: 10%;
-  margin-left: -45%;
- }
- #industryIcon:hover{
-  background-color: rgb(20, 29, 155);
- }
+.iconClass:hover {
+    width: 60px;
+}
 
- /* Diplomacy Button */
- #diplomacyButton {
-  display: none;
- }
- #diplomacyButton:checked + label {
-  margin-left: 0%;
- }
- #diplomacyIcon{
-  background-color: rgb(78, 51, 122);
-  top: 15%;
-  margin-left: -45%;
- }
- #diplomacyIcon:hover{
-  background-color: rgb(29, 13, 85);
- }
+.button {
+    position: absolute;
 
- /* Shop/Territory/War Button */
- #warButton {
-  display: none;
- }
- #warButton:checked + label {
-  margin-left: 0%;
- }
- #warIcon{
-  background-color: rgb(40, 106, 53);
-  top: 20%;
-  margin-left: -45%;
- }
- #warIcon:hover{
-  background-color: rgb(10, 56, 23);
- }
- 
- /* Animation for Tabs */
- .animate {
-  transition: margin-left 2s ease;
-  margin-left: -45%;
- }
- .return {
-  transition: margin-left 2s ease;
-  margin-left: 0%;
- }
-  /* -----------------------------------Side Tabs----------------------------------- */
+    transition: left var(--transition-time) ease;
+}
 
-  #industryTab {
+.button input[type="checkbox"] {
+    display: none;
+}
+
+/* Map Button */
+#mapIcon {
+    background-color: rgb(215, 43, 43);
+    top: 0%;
+}
+
+#mapIcon:hover {
+    background-color: rgb(127, 17, 17);
+}
+
+/* Player Button */
+#playerIcon {
+    background-color: rgb(128, 0, 128);
+}
+
+#playerIcon:hover {
+    background-color: rgb(64, 0, 64);
+}
+
+/* Industry Button */
+#industryIcon {
+    background-color: rgb(66, 84, 217);
+    top: 10%;
+    margin-left: -45%;
+}
+
+#industryIcon:hover {
+    background-color: rgb(20, 29, 155);
+}
+
+/* Diplomacy Button */
+
+#diplomacyIcon {
+    background-color: rgb(78, 51, 122);
+    top: 15%;
+    margin-left: -45%;
+}
+
+#diplomacyIcon:hover {
+    background-color: rgb(29, 13, 85);
+}
+
+/* Shop/Territory/War Button */
+#warIcon {
+    background-color: rgb(40, 106, 53);
+    top: 20%;
+    margin-left: -45%;
+}
+
+#warIcon:hover {
+    background-color: rgb(10, 56, 23);
+}
+
+/* Animation for Tabs */
+.button.animate {
+    left: 45%;
+}
+
+.button.return {
+    left: 0%;
+}
+
+.panel.animate {
+    left: 0%;
+}
+
+.panel.return {
+    left: -45%;
+}
+/* -----------------------------------Side Tabs----------------------------------- */
+
+#industryTab {
     border: 6px solid black;
     background-color: rgb(227, 193, 148);
     height: 100%;
     width: 45%;
     position: absolute;
     margin-left: 45%;
-  }
+}
 
- /* -----------------------------------Info Stats----------------------------------- */
- .industry {
-  border: 4px solid black;
-  height: 50px;
-  width: 50px;
-  text-align: center;
-  line-height: 50px;
-  font-size: 35px;
-  text-indent: -2px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  border-radius: 14px;
-  position: absolute;
-  margin-left: 50%;
-  margin-top: 10%;
- }
- .resources {
-  position: absolute;
-  height: 70px;
-  width: 70px;
-  line-height: 77px;
-  text-indent: 5px;
-  text-align: center;
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  margin-left: 49.5%;
-  margin-top: 20%;
- }
- .resources:after {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  content: '';
-  height: calc(100% - 22px);
-  width: calc(100% - 22px);
-  border: 4px solid black;
-  transform: rotateZ(45deg);
-  border-radius: 10px;
- }
- .military{
-  border-radius: 100px;
-  border: 4px solid black;
-  height: 30px;
-  width: 30px;
-  text-align: center;
-  line-height: 30px;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  position: absolute;
-  margin-left: 50.8%;
-  margin-top: 30%;
- }
- 
- 
- 
- 
+/* -----------------------------------Info Stats----------------------------------- */
+.industry {
+    border: 4px solid black;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px;
+    text-indent: -2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 14px;
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 10%;
+}
 
- 
+.resources {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    line-height: 77px;
+    text-indent: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 49.5%;
+    margin-top: 20%;
+}
+
+.resources:after {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    content: '';
+    height: calc(100% - 22px);
+    width: calc(100% - 22px);
+    border: 4px solid black;
+    transform: rotateZ(45deg);
+    border-radius: 10px;
+}
+
+.military {
+    border-radius: 100px;
+    border: 4px solid black;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 50.8%;
+    margin-top: 30%;
+}
