@@ -1,13 +1,39 @@
-const files = document.getElementById("playerData");
-const out = document.getElementById("jsonOut");
-files.addEventListener("input", () => {
-    const file = files.files[0];
+function main() {
+    const tabs = Array.from(document.getElementsByClassName("tab"));
+    let prevPanel = tabs[0].children[0];
+    let prevButton = tabs[0].children[1];
+    tabs.forEach(elem => {
+        const panel = elem.children[0];
+        const button = elem.children[1];
 
-    const reader = new FileReader();
+        button.children[0].addEventListener("change", () => {
+            if(prevPanel == panel) {
+                prevPanel.classList.remove("animate");
+                prevPanel.classList.add("return");
 
-    reader.onload = (ev) => {
-        console.log(JSON.parse(ev.target.result));
-    };
+                prevButton.classList.remove("animate");
+                prevButton.classList.add("return");
 
-    reader.readAsText(file, "utf8");
-});
+                prevPanel = null;
+                return;
+            } else if(prevPanel != null) {
+                prevPanel.classList.remove("animate");
+                prevPanel.classList.add("return");
+
+                prevButton.classList.remove("animate");
+                prevButton.classList.add("return");
+            }
+
+            panel.classList.remove("return");
+            panel.classList.add("animate");
+
+            button.classList.remove("return");
+            button.classList.add("animate");
+
+            prevPanel = panel;
+            prevButton = button;
+        });
+    });
+}
+
+main();
