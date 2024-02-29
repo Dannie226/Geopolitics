@@ -1,115 +1,187 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <title> Geopolitics </title>
-      <link rel="stylesheet" href="style.css">
-      <script src="https://kit.fontawesome.com/fbbd0c2358.js" crossorigin="anonymous"></script>
-      <link rel="icon" type="image/png" href="C:\Users\Nat06\OneDrive\Pictures\cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2pvYjczMC0wMDYteC5qcGc.webp">
-  </head>
-  <script>
-     var mbClicks = 0;
-     var ibClicks = 0;
-     var dbClicks = 0;
-     var wbClicks = 0;
-
-      function mbAnimate(){
-        var mapElement = document.getElementById("map");
-        if ((ibClicks % 2) != 0){
-          industryButton.click();
-        }   
-        if ((dbClicks % 2) != 0){
-          diplomacyButton.click();
-        }
-        if ((wbClicks % 2) != 0){
-          warButton.click();
-        } 
-
-        if(mbClicks % 2 == 0){
-          mapElement.className = "animate";
-          x = false;
-          }else{
-          mapElement.className = "return";
-          x = true;
-          }
-
-        mbClicks ++;
-      }
-
-      function ibAnimate(){
-        if ((mbClicks % 2) == 0){
-          mapButton.click();
-        }   
-        if ((dbClicks % 2) != 0){
-          diplomacyButton.click();
-        }
-        if ((wbClicks % 2) != 0){
-          warButton.click();
-        } 
-
-        ibClicks ++;
-      }
-
-      function dbAnimate(){
-        if ((mbClicks % 2) == 0){
-          mapButton.click();
-        }   
-        if ((ibClicks % 2) != 0){
-          industryButton.click();
-        } 
-        if ((wbClicks % 2) != 0){
-          warButton.click();
-        } 
-
-        dbClicks ++;
-      }
-
-      function wbAnimate(){
-        if ((mbClicks % 2) == 0){
-          mapButton.click();
-        }  
-        if ((ibClicks % 2) != 0){
-          industryButton.click();
-        }  
-        if ((dbClicks % 2) != 0){
-          diplomacyButton.click();
-        }
-
-        wbClicks ++;
-      }
-   
-    </script>
-  <body>
-      <!-- <input type="file" id="playerData" accept=".json,application/json" /> -->
-      <!-- <div id="jsonOut"></div> -->
-
-      <!-- Left Side Tabs & Buttons -->
-      <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="45%"></iframe>
-      <input type="checkbox" id="mapButton" onCLick="mbAnimate()" />
-      <label class="iconClass" for="mapButton" id = "mapIcon"> <i class="fa-solid fa-map-location-dot" ></i>
-      </label>
-
-      <!-- <div id = "industryTab"></div> -->
-      <input type="checkbox" id="industryButton" onCLick="ibAnimate()"/>
-      <label class="iconClass" for="industryButton" id = "industryIcon"> <i class="fa-solid fa-coins"></i>
-      </label>
-
-      <input type="checkbox" id="diplomacyButton" onCLick="dbAnimate()"/>
-      <label class="iconClass" for="diplomacyButton" id = "diplomacyIcon"> <i class="fa-solid fa-user-group"></i>
-      </label>
-
-      <input type="checkbox" id="warButton" onCLick="wbAnimate()"/>
-      <label class="iconClass" for="warButton" id = "warIcon"> <i class="fa-solid fa-cart-shopping"></i>
-      </label>
+   <head>
+       <title> Geopolitics </title>
+       <link rel="stylesheet" href="style.css">
+       <script src="https://kit.fontawesome.com/fbbd0c2358.js" crossorigin="anonymous"></script>
+       <!-- <link rel="icon" type="image/png" href=""> -->
+   </head>
+   <body>
+       <div class="tab">
+           <div class="panel animate">
+               <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1ISnIQKHKWmsTNdk2CDTzUVy0qgwrTaw&ehbc=2E312F" id="map" height="100%" width="100%"></iframe>
+           </div>
+           <div class="button animate" style="top: 0%;">
+               <input type="checkbox" id="mapButton" checked name="panelSelect"/>
+               <label class="iconClass" for="mapButton" id="mapIcon"> <i class="fa-solid fa-map-location-dot"></i>
+               </label>
+           </div>
+       </div>
 
 
-      <!-- Display Info -->
-      <div class="vl"></div>
-  <p class="industry"> 6 </p>
+       <!-- Left Side Tabs & Buttons -->
+       <div class="tab">
+           <div class="panel return" style="background-color: blue;">
+              
+           </div>
+           <div class="button return" style="top: 10%;">
+               <input class="hidden" type="checkbox" id="industryButton" name="panelSelect"/>
+               <label class="iconClass" for="industryButton" id="industryIcon"> <i class="fa-solid fa-coins"></i>
+               </label>
+           </div>
+       </div>
+      
+       <div class="tab">
+           <div class="panel return" style="background-color: red;">
 
-  <div class='resources'> 5000
-    </div>
 
-  <div class="military"> 100 </div>
-   
-  </body>
+           </div>
+           <div class="button return" style="top: 15%;">
+               <input type="checkbox" id="diplomacyButton" name="panelSelect"/>
+               <label class="iconClass" for="diplomacyButton" id="diplomacyIcon"> <i class="fa-solid fa-user-group"></i>
+               </label>
+           </div>
+       </div>
+
+
+       <div class="tab">
+           <div class="panel return" style="background-color: green;">
+
+
+           </div>
+           <div class="button return" style="top: 20%">
+               <input type="checkbox" id="warButton" name="panelSelect"/>
+               <label class="iconClass" for="warButton" id="warIcon"> <i class="fa-solid fa-cart-shopping"></i>
+               </label>
+           </div>
+       </div>
+
+
+       <div class="tab">
+           <div class="panel return" style="background-color: rgb(87, 87, 87);">
+               <!-- variables:  backdrop, border, text, background   -->
+              
+               <button onClick="changeTheme
+               ('rgb(36, 35, 33)', '4px solid rgb(90, 86, 82)', 'rgb(201, 198, 185)', 'rgb(43, 42, 38)')">
+                   Style 1 <!-- Dark 1 -->
+               </button>
+            
+               <button onClick="changeTheme
+               ('#1b1b1b', '4px solid #000000', '#959595', '#2c2c2c')">
+                   Style 2 <!-- Dark 2 -->
+               </button>
+            
+               <button onClick="changeTheme
+               ('rgb(15, 13, 7)', '4px solid rgb(90, 86, 82)', 'rgb(213, 210, 196)', 'rgb(24, 22, 16)')">
+                   Style 3 <!-- Dark 3 --> 
+               </button>
+            
+               <button onClick="changeTheme
+               ('#000000', '4px solid #141414', '#acacac', '#181818')">
+                   Style 4 <!-- Dark 4 -->
+               </button>
+              
+               <button onClick="changeTheme
+               ('rgb(48, 41, 32)', '4px solid rgb(65, 57, 47)', 'rgb(210, 203, 168)','rgb(39, 36, 25)')">
+                   Style 5 <!-- Dark 5 -->
+               </button>
+              
+               <button onClick="changeTheme
+               ('#a5a5a5', '4px solid #212121', '#242424', '#cecece')">
+                   Style 6 <!-- White -->
+               </button>
+
+               <button onClick="changeTheme
+               ('#4f0400', '4px solid #6a0500', '#ffeae9', '#810701')">
+                   Style 7 <!-- Red -->
+               </button>
+
+               <button onClick="changeTheme
+               ('#927f69', '4px solid #5b5043', '#5b5043', '#d2c5b0')">
+                   Style 8 <!-- Creamy -->
+               </button>
+
+               <button onClick="changeTheme
+               ('#8e9a6c', '4px solid #63785c', '#2d4014', '#b4c2a0')">
+                   Style 9 <!-- Light Green -->
+               </button>
+
+               <button onClick="changeTheme
+               ('#0e2415', '4px solid #072d0d', '#aed3ae', '#1f452d')">
+                   Style 10 <!-- Dark Green -->
+               </button>
+
+               <button onClick="changeTheme
+               ('#051f48', '4px solid #082a64', '#b8c1d7', '#214c9b')">
+                   Style 11 <!-- Dark Blue -->
+               </button>
+
+               <button onClick="changeTheme
+               ('#1e0e24', '4px solid #60457a', '#c7aed3', '#3c2854')">
+                   Style 12 <!-- Dark Purple -->
+               </button>
+
+           </div>
+           <div class="button return" style="top: 94%;">
+               <input type="checkbox" id="settingButton" name="panelSelect"/>
+               <label class="iconClass" for="settingButton" id="settingIcon"> <i class="fa-solid fa-gear"></i>
+               </label>
+           </div>
+       </div>
+
+
+       <!-- Display Info -->
+       <div class="vl"></div>
+
+
+       <p class="money defaultStyle"> $10,000,000 </p>
+       <p class="morale defaultStyle"> 80 </p>
+
+
+       <p class="industry defaultStyle" style="margin-left: 50%"> 2 </p>
+       <p class="industry defaultStyle" style="margin-left: 58.2%"> 0 </p>
+       <p class="industry defaultStyle" style="margin-left: 66.4%"> 5 </p>
+       <p class="industry defaultStyle" style="margin-left: 74.6%"> 0 </p>
+       <p class="industry defaultStyle" style="margin-left: 82.8%"> 0 </p>
+       <p class="industry defaultStyle" style="margin-left: 91%"> 3 </p>
+
+
+       <p class = 'backgroundResource defaultStyle' style="margin-left: 51.6%"></p>
+       <h1 class='resources' style="margin-left: 50.2%"> 510 </h1>
+
+
+       <p class = 'backgroundResource defaultStyle' style="margin-left: 68%"></p>
+       <h1 class='resources' style="margin-left: 66.6%"> 8090 </h1>
+
+
+       <p class = 'backgroundResource defaultStyle' style="margin-left: 84.4%"></p>
+       <h1 class='resources' style="margin-left: 83%"> 11230 </h1>
+      
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 50%"> 1000 </p>
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 55%"> 200 </p>
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 60%"> 50 </p>
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 65%"> 100 </p>
+
+
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 78%"> 30 </p>
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 83%"> 10 </p>
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 88%"> 90 </p>
+       <p class="military defaultStyle" style = "margin-top: 38%; margin-left: 93%"> 80 </p>
+
+
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 50%"> 40 </p>
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 55%"> 50 </p>
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 60%"> 20 </p>
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 65%"> 10 </p>
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 70%"> 32 </p>
+
+
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 88%"> 10 </p>
+       <p class="military defaultStyle" style = "margin-top: 42%; margin-left: 93%"> 10 </p>
+
+
+   </body>  
+
+  <script src="../scripts/player_tab.js"></script>
+
 </html>
