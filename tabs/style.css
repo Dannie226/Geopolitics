@@ -1,8 +1,6 @@
 :root {
   --transition-time: 1.5s;
  }
- 
- 
  html, body {
   margin: 0px;
   padding: 0px;
@@ -11,8 +9,6 @@
   height: 100%;
   background-color: rgb(36, 35, 33);
  }
- 
- 
  iframe {
   margin: 0px;
   padding: 0px;
@@ -21,8 +17,6 @@
   position: absolute;
   z-index: 0;
  }
- 
- 
  .vl {
   border-left: 6px solid black;
   height: 100%;
@@ -30,28 +24,16 @@
   margin-left: 45%;
   top: 0;
  }
- 
- 
  .panel {
   position: absolute;
   top: 0%;
   left: 0%;
- 
- 
   width: 45%;
   height: 100%;
- 
- 
   transition: left var(--transition-time) ease;
  }
- 
- 
  /* -----------------------------------All Buttons & Animation----------------------------------- */
- 
- 
  /* Buttons in General */
- 
- 
  .iconClass {
   height: 30px;
   width: 30px;
@@ -66,158 +48,317 @@
   transition: width calc(var(--transition-time) * 3 / 20), background-color calc(var(--transition-time) / 4) ease;
   color: white;
  }
- 
- 
  .iconClass:hover {
   width: 60px;
  }
- 
- 
  .button {
   position: absolute;
- 
- 
   transition: left var(--transition-time) ease;
  }
- 
- 
  .button input[type="checkbox"] {
   display: none;
  }
- 
- 
  /* Map Button */
  #mapIcon {
   background-color: rgb(215, 43, 43);
   top: 0%;
  }
- 
- 
  #mapIcon:hover {
   background-color: rgb(127, 17, 17);
  }
- 
- 
  /* Industry Button */
  #industryIcon {
   background-color: rgb(66, 84, 217);
   top: 10%;
   margin-left: -45%;
  }
- 
- 
  #industryIcon:hover {
   background-color: rgb(20, 29, 155);
  }
- 
- 
  /* Diplomacy Button */
  #diplomacyIcon {
   background-color: rgb(78, 51, 122);
   top: 15%;
   margin-left: -45%;
  }
- 
- 
  #diplomacyIcon:hover {
   background-color: rgb(29, 13, 85);
  }
- 
- 
  /* Shop/Territory/War Button */
  #warIcon {
   background-color: rgb(40, 106, 53);
   top: 20%;
   margin-left: -45%;
  }
- 
- 
  #warIcon:hover {
   background-color: rgb(10, 56, 23);
  }
- 
- 
  /* Settings Button */
  #settingIcon {
   background-color: rgb(110, 110, 110);
   top: 20%;
   margin-left: -45%;
  }
- 
- 
  #settingIcon:hover {
   background-color: rgb(44, 44, 44);
  }
- 
- 
  /* Animation for Tabs */
  .button.animate {
   left: 45%;
  }
- 
- 
  .button.return {
   left: 0%;
  }
- 
- 
  .panel.animate {
   left: 0%;
  }
- 
- 
  .panel.return {
   left: -45%;
  }
  /* -----------------------------------Side Tabs----------------------------------- */
- 
- 
+
+/* Industry */
+.stockPanel{
+  height:96px;
+  width:500px;
+  position:absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin-left:14%;
+  cursor: pointer;
+}
+
+.stockPanelBack {
+  transform: rotateX(180deg);
+}
+
+/* Note to dannnymanny -- Idk how to condense this into just one thing or if thats even possible (prob not) */
+.medicineFlip {
+  width: 500px;
+  height: 96px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin-top: 5%;
+}
+.medicineFlip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.scienceFlip {
+  width: 500px;
+  height: 96px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin-top: 5%;
+}
+.scienceFlip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.miningFlip {
+  width: 500px;
+  height: 96px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin-top: 5%;
+}
+.miningFlip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.agricultureFlip {
+  width: 500px;
+  height: 96px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin-top: 5%;
+}
+.agricultureFlip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.businessFlip {
+  width: 500px;
+  height: 96px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin-top: 5%;
+}
+.businessFlip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.energyFlip {
+  width: 500px;
+  height: 96px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  margin-top: 5%;
+}
+.energyFlip.is-flipped {
+  transform: rotateX(180deg);
+}
+
+#medicinePanel{
+  background-color:rgb(201, 37, 37);
+}
+
+#sciencePanel{
+  background-color:rgb(201, 37, 37);
+  /* background-color:rgba(10, 103, 72, 0.707); */
+}
+
+#miningPanel{
+  background-color:rgb(10, 103, 72);
+  /* background-color:rgba(5, 52, 36, 0.529); */
+}
+
+#agriculturePanel{
+  background-color:rgb(10, 103, 72);
+  /* background-color:rgba(137, 22, 22, 0.557); */
+}
+
+#businessPanel{
+  background-color:rgb(201, 37, 37);
+  /* background-color:rgba(201, 37, 37, 0.718); */
+}
+
+#energyPanel{
+  background-color:rgb(10, 103, 72);
+}
+
+.industryPercent{
+  color: rgb(255, 255, 255);
+  font-size: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: right;
+  padding: 8px 0;
+  margin-right: 5px;
+}
+
+.industryName{
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  position:absolute;
+  margin-top:-91px;
+  margin-left:10px;
+}
+
+.industryIcon{
+  font-size:40px;
+  color: white;
+  margin-top:-43px;
+  margin-left:10px;
+  position: absolute;
+}
+
+.industryChange{
+  color: rgba(255, 255, 255, 0.735);
+  font-size:12px;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:bold;
+  margin-top:-57px;
+  margin-left:10px;
+}
+
+.backPanelStyle{
+  color: rgba(255, 255, 255, 0.927);
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  position:absolute;
+}
+
+.industryBackIcons{
+  font-size:30px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+}
+
  /* -----------------------------------Info Stats----------------------------------- */
  .defaultStyle{
   border: 4px solid  rgb(90, 86, 82);
   color: rgb(201, 198, 185);
   background-color: rgb(43, 42, 38);
-
+ 
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   position: absolute;
   text-align: center;
- } 
- 
+ }
  .money{
-  height: 50px;
-  width: 300px;
+  height: 60px;
+  width: 400px;
   line-height: 50px;
-  font-size: 35px;
+  font-size: 50px;
   margin-left: 50%;
   margin-top: 2%;
   border-radius: 7px;
+  line-height:60px;
+  z-index: 1;
  }
- 
- 
- .morale{
+ .economy{
   height: 50px;
-  width: 50px;
+  width: 250px;
   line-height: 50px;
-  font-size: 35px;
+  font-size: 23px;
+  margin-left: 55%;
+  margin-top: 4.5%;
+  border-radius: 7px;
+  line-height:75px;
+  z-index: 0;
+ }
+ .morale{
+  height: 60px;
+  width: 60px;
+  line-height: 57px;
+  font-size: 45px;
   margin-left: 91%;
   margin-top: 2%;
   border-radius: 7px;
  }
- 
- 
- .industry {
+ .token {
   height: 50px;
   width: 50px;
   line-height: 50px;
   font-size: 35px;
   text-indent: -2px;
   border-radius: 14px;
-  margin-top: 12%;
+  margin-top: 14%;
  }
- 
- 
- .resources {
+
+ .resourceTiers{
+  height: 50px;
+  width: 70px;
+  font-size: 17px;
+  border-radius: 80px;
+  margin-top:23.5%;
+  z-index: 0;
+}
+ .resources{
+  height: 80px;
+  width: 180px;
+  line-height: 80px;
+  font-size: 50px;
+  border-radius: 80px;
+  margin-top:25%;
+  z-index: 1;
+ }
+ .resourceGainLoss{
+  height: 50px;
+  width: 70px;
+  font-size: 17px;
+  border-radius: 80px;
+  margin-top:28.5%;
+  z-index: 0;
+  line-height:80px;
+ }
+
+ /* .resources {
   width: 158px;
   text-align: center;
   text-indent: 5px;
@@ -229,22 +370,21 @@
   margin-top: 25%;
   position: absolute;
  }
- 
- 
  .backgroundResource{
   height: 120px;
   width: 120px;
   transform: rotateZ(45deg);
   border-radius: 30px;
   margin-top: 22.8%;
- }
- 
- 
+  
+ } */
  .military {
   border-radius: 100px;
-  height: 30px;
-  width: 30px;
-  line-height: 30px;
+  height: 35px;
+  width: 35px;
+  line-height: 35px;
   font-size: 15px;
  }
  
+
+
