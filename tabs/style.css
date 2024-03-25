@@ -1,24 +1,24 @@
 :root {
-  --transition-time: 1.5s;
+  --transition-time: 1.2s;
  }
  html, body {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+  margin: 0%;
+  padding: 0%;
+  border: 0%;
   width: 100%;
   height: 100%;
   background-color: rgb(36, 35, 33);
  }
  iframe {
-  margin: 0px;
-  padding: 0px;
+  margin: 0%;
+  padding: 0%;
   border: none;
   display: inline-block;
   position: absolute;
   z-index: 0;
  }
  .vl {
-  border-left: 6px solid black;
+  border-left: 0.35vw solid black;
   height: 100%;
   position: absolute;
   margin-left: 45%;
@@ -35,21 +35,21 @@
  /* -----------------------------------All Buttons & Animation----------------------------------- */
  /* Buttons in General */
  .iconClass {
-  height: 30px;
-  width: 30px;
+  height: 3.9vh;
+  width: 2.2vw;
   left: 45%;
   z-index: 1;
   position: absolute;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.4vw;
   cursor: pointer;
-  border: 5px solid rgb(0, 0, 0);
-  line-height: 1.5;
+  border: 0.35vw solid rgb(0, 0, 0);
+  line-height: 1.6;
   transition: width calc(var(--transition-time) * 3 / 20), background-color calc(var(--transition-time) / 4) ease;
   color: white;
  }
  .iconClass:hover {
-  width: 60px;
+  width: 4.2vw;
  }
  .button {
   position: absolute;
@@ -119,8 +119,8 @@
 
 /* Industry */
 .stockPanel{
-  height:96px;
-  width:500px;
+  height:12vh;
+  width:35vw;
   position:absolute;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -132,69 +132,34 @@
   transform: rotateX(180deg);
 }
 
-/* Note to dannnymanny -- Idk how to condense this into just one thing or if thats even possible (prob not) */
-.medicineFlip {
-  width: 500px;
-  height: 96px;
+.StockBoxStyle{
+  height:12vh;
+  width:35vw;
   transition: transform 0.5s;
   transform-style: preserve-3d;
-  margin-top: 5%;
+  margin-top: 4.5%;
 }
+/* Note to dannnymanny -- Idk how to condense this into just one thing or if thats even possible (prob not) */
 .medicineFlip.is-flipped {
   transform: rotateX(180deg);
 }
 
-.scienceFlip {
-  width: 500px;
-  height: 96px;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  margin-top: 5%;
-}
 .scienceFlip.is-flipped {
   transform: rotateX(180deg);
 }
 
-.miningFlip {
-  width: 500px;
-  height: 96px;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  margin-top: 5%;
-}
 .miningFlip.is-flipped {
   transform: rotateX(180deg);
 }
 
-.agricultureFlip {
-  width: 500px;
-  height: 96px;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  margin-top: 5%;
-}
 .agricultureFlip.is-flipped {
   transform: rotateX(180deg);
 }
 
-.businessFlip {
-  width: 500px;
-  height: 96px;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  margin-top: 5%;
-}
 .businessFlip.is-flipped {
   transform: rotateX(180deg);
 }
 
-.energyFlip {
-  width: 500px;
-  height: 96px;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-  margin-top: 5%;
-}
 .energyFlip.is-flipped {
   transform: rotateX(180deg);
 }
@@ -229,59 +194,125 @@
 
 .industryPercent{
   color: rgb(255, 255, 255);
-  font-size: 70px;
+  font-size: 5.6vw;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   text-align: right;
-  padding: 8px 0;
-  margin-right: 5px;
+  margin-right: 1vw;
 }
 
 .industryName{
   color: rgb(255, 255, 255);
-  font-size: 30px;
+  font-size: 2.2vw;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   position:absolute;
-  margin-top:-91px;
-  margin-left:10px;
+  margin-top:-11.5vh;
+  margin-left:0.5vw;
 }
 
 .industryIcon{
-  font-size:40px;
+  font-size:4.5vh;
   color: white;
-  margin-top:-43px;
-  margin-left:10px;
+  margin-top:-5vh;
+  margin-left:0.6vw;
   position: absolute;
 }
 
 .industryChange{
   color: rgba(255, 255, 255, 0.735);
-  font-size:12px;
+  font-size:0.9vw;
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   font-weight:bold;
-  margin-top:-57px;
-  margin-left:10px;
+  margin-top:-7.1vh;
+  margin-left:0.6vw;
 }
 
 .backPanelStyle{
   color: rgba(255, 255, 255, 0.927);
-  font-size: 18px;
+  font-size: 1.3vw;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   position:absolute;
 }
 
 .industryBackIcons{
-  font-size:30px;
+  font-size:2vw;
   color: rgb(255, 255, 255);
   position: absolute;
 }
 
+/* Social */
+.socialIcon{
+  font-size:50px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  margin-left:88%;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+.socialIcon:hover{
+  transition: 0.2s;
+  color:rgba(0, 0, 0, 0.714);
+}
+
+.socialNotification{
+  color:white;
+  background-color: rgb(189, 18, 18);
+  border-radius:100px;
+  height:25px;
+  width:25px;
+  margin-left:94%;
+  margin-top:1%;
+  font-size: 20px;
+  line-height:25px;
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  position: absolute;
+  border: 3.5px solid rgb(183, 150, 191);
+  cursor: pointer;
+
+}
+
+.socialTradeButton{
+  height:80px;
+  width:300px;
+  border: 0px solid black;
+  background-color: rgb(78, 51, 122);
+  border-radius: 6px;
+  color:white;
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:65px;
+  position: absolute;
+  font-weight: bold;
+  margin-left:28%;
+  margin-top: 20%;
+  line-height: 10px;
+  cursor: pointer;
+}
+
+.socialTradeButton:hover{
+  transition: 0.2s;
+  background-color: rgb(42, 27, 66);
+}
+
+.socialTitle{
+  font-size: 80px;
+  color:black;
+  margin-left:30%;
+  margin-top: 35%;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  font-weight: bold;
+}
+
  /* -----------------------------------Info Stats----------------------------------- */
  .defaultStyle{
-  border: 4px solid  rgb(90, 86, 82);
+  border: 0.35vw solid  rgb(90, 86, 82);
   color: rgb(201, 198, 185);
   background-color: rgb(43, 42, 38);
  
@@ -291,71 +322,78 @@
   text-align: center;
  }
  .money{
-  height: 60px;
-  width: 400px;
-  line-height: 50px;
-  font-size: 50px;
+  height: 7%;
+  width: 30%;
+  font-size: 3.4vw;
   margin-left: 50%;
   margin-top: 2%;
-  border-radius: 7px;
-  line-height:60px;
+  border-radius: 1vw;
+  line-height:7vh;
   z-index: 1;
  }
  .economy{
-  height: 50px;
-  width: 250px;
-  line-height: 50px;
-  font-size: 23px;
-  margin-left: 55%;
+  height: 6.2vh;
+  width: 18vw;
+  font-size: 1.6vw;
+  margin-left: 56%;
   margin-top: 4.5%;
-  border-radius: 7px;
-  line-height:75px;
+  border-radius: 1vw;
+  line-height:9.2vh;
   z-index: 0;
  }
  .morale{
-  height: 60px;
-  width: 60px;
-  line-height: 57px;
-  font-size: 45px;
-  margin-left: 91%;
-  margin-top: 2%;
-  border-radius: 7px;
+  height: 7.5vh;
+  width: 4vw;
+  line-height: 7.5vh;
+  font-size: 3.4vw;
+  margin-left: 90.6vw;
+  margin-top: 3.6vh;
+  border-radius: 0.8vw;
  }
  .token {
-  height: 50px;
-  width: 50px;
-  line-height: 50px;
-  font-size: 35px;
-  text-indent: -2px;
-  border-radius: 14px;
+  height: 6.5vh;
+  width: 3.6vw;
+  line-height: 6.5vh;
+  font-size: 2.6vw;
+  border-radius: 0.5vw;
   margin-top: 14%;
  }
 
  .resourceTiers{
-  height: 50px;
-  width: 70px;
-  font-size: 17px;
-  border-radius: 80px;
-  margin-top:23.5%;
+  height: 8vh;
+  width: 4.6vw;
+  font-size: 1.2vw;
+  border-radius: 5vw;
+  margin-top:43.5vh;
   z-index: 0;
 }
  .resources{
-  height: 80px;
-  width: 180px;
-  line-height: 80px;
-  font-size: 50px;
-  border-radius: 80px;
+  height: 9.4vh;
+  width: 12vw;
+  line-height: 9.8vh;
+  font-size: 3.8vw;
+  border-radius: 4vw;
   margin-top:25%;
   z-index: 1;
  }
  .resourceGainLoss{
-  height: 50px;
-  width: 70px;
-  font-size: 17px;
-  border-radius: 80px;
-  margin-top:28.5%;
+  height: 8vh;
+  width: 4.6vw;
+  font-size: 1.2vw;
+  line-height: 13.3vh;
+  border-radius: 5vw;
+  margin-top:51vh;
   z-index: 0;
-  line-height:80px;
+ }
+
+ #foodGainLoss{
+  color: rgb(201, 37, 37);
+ }
+ #metalGainLoss{
+  color: rgb(10, 103, 72);
+ }
+ #oilGainLoss{
+  color: rgb(10, 103, 72);
  }
 
  /* .resources {
@@ -379,11 +417,11 @@
   
  } */
  .military {
-  border-radius: 100px;
-  height: 35px;
-  width: 35px;
-  line-height: 35px;
-  font-size: 15px;
+  border-radius: 100vw;
+  height: 5vh;
+  width: 2.7vw;
+  line-height: 5vh;
+  font-size: 1.2vw;
  }
  
 
