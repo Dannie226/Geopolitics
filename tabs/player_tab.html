@@ -165,13 +165,108 @@
           </div>
       </div>
    
-      <!-- Social Tab -->
+      <!-- Diplomacy/Social Tab -->
       <div class="tab">
-          <div class="panel return" style="background-color: rgb(183, 150, 191);">
-            <div class="socialNotification">1</div>
-            <i class="fa-solid fa-handshake socialIcon"></i>
-            <button class = "socialTradeButton">Trade</button>
-            <p class="socialTitle">History</p>
+          <div class="panel return" style="background-color: rgb(191, 173, 150);">
+            <div class="diplomacyPlayerSelect">
+                <input type='radio' class = "diplomacyRadioButtons" name='tradePlayerSelect' id="Player1">
+                    <div class="diplomacyUser" onclick="playerSelect('Player1', 'subPlayer1')" id="subPlayer1">
+                        <img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" class="diplomacyFlag"/>
+                        <div class="diplomacyCountryName">Country Name</div>
+                        <div class="diplomacyPlayerName">Player Name</div>
+                        <div class="diplomacyCapitalName">Capital</div>
+                    </div>
+                </input>
+                <input type='radio' class = "diplomacyRadioButtons" name='tradePlayerSelect' id="Player2">
+                    <div class="diplomacyUser" onclick="playerSelect('Player2', 'subPlayer2')" id="subPlayer2">
+                        <img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" class="diplomacyFlag"/>
+                        <div class="diplomacyCountryName">Country Name</div>
+                        <div class="diplomacyPlayerName">Player Name</div>
+                        <div class="diplomacyCapitalName">Capital</div>
+                    </div>
+                </input>
+                <input type='radio' class = "diplomacyRadioButtons" name='tradePlayerSelect' id="Player3">
+                    <div class="diplomacyUser" onclick="playerSelect('Player3', 'subPlayer3')" id="subPlayer3">
+                        <img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" class="diplomacyFlag"/>
+                        <div class="diplomacyCountryName">Country Name</div>
+                        <div class="diplomacyPlayerName">Player Name</div>
+                        <div class="diplomacyCapitalName">Capital</div>
+                    </div>
+                </input>
+                <input type='radio' class = "diplomacyRadioButtons" name='tradePlayerSelect' id="Player4">
+                    <div class="diplomacyUser" onclick="playerSelect('Player4', 'subPlayer4')" id="subPlayer4">
+                        <img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" class="diplomacyFlag"/>
+                        <div class="diplomacyCountryName">Country Name</div>
+                        <div class="diplomacyPlayerName">Player Name</div>
+                        <div class="diplomacyCapitalName">Capital</div>
+                    </div>
+                </input>
+                <input type='radio' class = "diplomacyRadioButtons" name='tradePlayerSelect' id="Player5">
+                    <div class="diplomacyUser" onclick="playerSelect('Player5', 'subPlayer5')" id="subPlayer5">
+                        <img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" class="diplomacyFlag"/>
+                        <div class="diplomacyCountryName">Country Name</div>
+                        <div class="diplomacyPlayerName">Player Name</div>
+                        <div class="diplomacyCapitalName">Capital</div>
+                    </div>
+                </input>
+                <input type='radio' class = "diplomacyRadioButtons" name='tradePlayerSelect' id="Player6">
+                    <div class="diplomacyUser" onclick="playerSelect('Player6', 'subPlayer6')" id="subPlayer6">
+                        <img src="https://cdn.britannica.com/33/4833-004-828A9A84/Flag-United-States-of-America.jpg" class="diplomacyFlag"/>
+                        <div class="diplomacyCountryName">Country Name</div>
+                        <div class="diplomacyPlayerName">Player Name</div>
+                        <div class="diplomacyCapitalName">Capital</div>
+                    </div>
+                </input>
+            </div>
+
+            <div id="tradeGive">
+                <div class="tradePlayerName">Player Name</div>
+                <div class="tradeTitle">You Give</div>
+                <div class="tradeCategory tradeSelect" style="width:200px;">
+                    <select>
+                      <option value="0">Select Category:</option>
+                      <option value="1">Resource</option>
+                      <option value="2">Territory</option>
+                      <option value="3">Military</option>
+                      <option value="4">None</option>
+                    </select>
+                  </div>
+                <div class="tradeItem" id="youGiveItem"></div>
+                <form>
+                    <input type="number" class="tradeNumBox" id="youGiveAmount">
+                </form>
+            </div>
+            <div id="tradeReceive">
+                <div class="tradePlayerName">Player Name</div>
+                <div class="tradeTitle">You Get</div>
+
+                <!-- Dannie3 Okay, okay, so I want it so that they choose a category of trade. Once they choose a category, 
+                    that affects the folowing 'tradeItem'. What trade item is supposed to do is be a pressable thing that 
+                shows images of options. For example, If they selected the category 'resource' then I want tradeItem, once pressed
+            to show a picture of food (corn), metal, and oil. If they selected the military category, then it shows pics of troops to choose from.
+        Territories wouldnt show pics, just the names. I also want it to make the numberbox (id = youGetAmount or, for the giving side, id=youGiveAmount)
+            unusable if they choose territories (since theres no number attached to territories)............also side note idk why the text box
+            which is set to "number" is able to input "e" but just e. Technically its a number, but still...-->
+                <div class="tradeCategory tradeSelect" style="width:200px;">
+                    <select>
+                      <option value="0">Select Category:</option>
+                      <option value="1">Resource</option>
+                      <option value="2">Territory</option>
+                      <option value="3">Military</option>
+                      <option value="4">None</option>
+                    </select>
+                </div>
+
+                <div class="tradeItem" style="width:190px;">Choose Item</div> 
+                <!-- Dannie 4  much less important, but I know that this all has to be a form eventually cuz it needs to be sent out and stuff.
+                This is something I plan on handling later; however, if you think there's something glaringly obvious/important that should
+                 be put in now then you know better than me. Otherwise ill handle it later (if I can understand it)-->
+                <form>
+                    <input type="number" class="tradeNumBox" id="youGetAmount">
+                </form>
+            </div>
+            
+            
           </div>
           <div class="button return" style="top: 15%;">
               <input type="checkbox" id="diplomacyButton" name="panelSelect"/>
@@ -192,6 +287,19 @@
               </label>
           </div>
       </div>
+
+          <!-- Statistics/Stats Tab -->
+          <div class="tab">
+            <div class="panel return" style="background-color: rgb(171, 162, 144);">
+  
+  
+            </div>
+            <div class="button return" style="top: 89%">
+                <input type="checkbox" id="statButton" name="panelSelect"/>
+                <label class="iconClass" for="statButton" id="statIcon"> <i class="fa-solid fa-earth-americas"></i>
+                </label>
+            </div>
+        </div>
 
       <!-- Setting Tab -->
       <div class="tab">
